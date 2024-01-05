@@ -20,6 +20,6 @@
 
 | 페이지 출력 관련 | 페이지 명칭 | 담당자 |
 | -- | -- | -- |
-|문제 리스트와 선택지 리스트 산출 | quiz_list |  aa  |
-| 문제 풀기  | quiz_solve | aa |
-| 참가자 및 결과 | player_list | aa |
+|문제 리스트와 선택지 리스트 산출 | quiz_list |  --  |
+| 문제 풀기  | quiz_solve | -- |
+| 참가자 및 결과 | player_list | -- |
