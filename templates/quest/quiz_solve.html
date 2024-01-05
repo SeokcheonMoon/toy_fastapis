@@ -1,0 +1,22 @@
+{% extends "nav_template.html"%}
+<title>quiz_solve</title>
+
+{% block main_container %}
+<form action="">
+    <div class="mb-3">
+        <label for="sel1" class="form-label">1번 문제 (select one):</label>
+        <button class="radio" id="quiz1" name="quizlist1">
+            <option value="Option1">1</option>
+            <option value="Option2">2</option>
+            <option value="Option3">3</option>
+            <option value="Option4">4</option>
+        </select>
+    </div>
+</form>
+{% endblock %}
+
+
+<div>
+    <label for="doglang2">강아지 말</label>
+    <input type="radio" name="hope_lang" value="dog_lang" id="doglang2">
+</div>
