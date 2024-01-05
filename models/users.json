@@ -10,3 +10,50 @@
     {"name": "신동엽", "email": "shindongyeop@example.com", "pswd": "password9", "manager": "Manager9", "sellist1": "Option9", "text": "안녕하세요. 신동엽입니다."},
     {"name": "이경규", "email": "leekyungkyu@example.com", "pswd": "password10", "manager": "Manager10", "sellist1": "Option10", "text": "안녕하세요. 이경규입니다."}
 ]
+
+[
+    {"question" : "다음 중 가장 큰 동물은 무엇인가요?", "choice1" : "a. 코끼리", "choice2" :"b. 사자","choice3" : "c. 원숭이", "choice4" : "d. 토끼", "answer" : "a. 코끼리" }
+    {"question" : "1+1은 얼마인가요?", "choice1" : "a. 1","choice2" : "b. 2","choice3" : "c. 3","choice4" : "d. 4", "answer" : "b. 2" }
+    {"question" : "올림픽은 몇 년마다 개최되나요?", "choice1" : "a. 2년마다", "choice2" : "b. 3년마다","choice3" : "c. 4년마다","choice4" : "d. 5년마다", "answer" : "c. 4년마다"}
+    {"question" : "지구의 지름은 얼마인가요?", "choice1" : "a. 약 6,371km", "choice2" : "b. 약 10,000km", "choice3" : "c. 약 12,742km","choice4" : "d. 약 15,000km", "answer" : "c. 약 12,742km"}
+    {"question" : "남극에 위치한 대륙은 무엇인가요?", "choice1" : "a. 아시아", "choice2" : "b. 유럽", "choice3" : "c. 남아메리카","choice4" : "d. 남극", "answer" : "d. 남극"}
+]
+
+// 다음 중 가장 큰 동물은 무엇인가요?
+// a. 코끼리
+// b. 사자
+// c. 원숭이
+// d. 토끼
+// 1+1은 얼마인가요?
+// a. 1
+// b. 2
+// c. 3
+// d. 4
+// 올림픽은 몇 년마다 개최되나요?
+// a. 2년마다
+// b. 3년마다
+// c. 4년마다
+// d. 5년마다
+// 지구의 지름은 얼마인가요?
+// a. 약 6,371km
+// b. 약 10,000km
+// c. 약 12,742km
+// d. 약 15,000km
+// 남극에 위치한 대륙은 무엇인가요?
+// a. 아시아
+// b. 유럽
+// c. 남아메리카
+// d. 남극
+
+
+
+// 다음 중 가장 큰 동물은 무엇인가요?
+// 정답: a. 코끼리
+// 1+1은 얼마인가요?
+// 정답: b. 2
+// 올림픽은 몇 년마다 개최되나요?
+// 정답: c. 4년마다
+// 지구의 지름은 얼마인가요?
+// 정답: c. 약 12,742km
+// 남극에 위치한 대륙은 무엇인가요?
+// 정답: d. 남극

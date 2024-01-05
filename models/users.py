@@ -14,3 +14,16 @@ class User(Document):
   
     class Settings:
         name = "users"
+
+
+
+class User(Document):
+    question: Optional[str] = None
+    choice1: Optional[str] = None
+    choice2: Optional[str] = None
+    choice3: Optional[str] = None
+    choice4: Optional[str] = None
+    answer: Optional[str] = None
+  
+    class Settings:
+        name = "users"
