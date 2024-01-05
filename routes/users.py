@@ -45,18 +45,38 @@ async def list(request:Request):
     print(dict(await request.form()))
     return templates.TemplateResponse(name="users/list.html", context={'request':request})
 
+# from pymongo import MongoClient
+
+# # mongoDB에 접속 ( 자원에 대한 class)
+# mongoClient = MongoClient("mongodb://localhost:27017")
+
+# # database 생성 및 연결
+# database = mongoClient["toy_fastapis"]
+
+# # collection에 작업
+# collection = database["users"]
+
 @router.get("/list") # 펑션 호출 방식
 async def list(request:Request):
-    print(dict(request._query_params))
-    user_list = [
-        {"id": 1, "name": "김철수", "email": "cheolsu@example.com"},
-        {"id": 2, "name": "이영희", "email": "younghi@example.com"},
-        {"id": 3, "name": "박지성", "email": "jiseong@example.com"},
-        {"id": 4, "name": "김미나", "email": "mina@example.com"},
-        {"id": 5, "name": "장현우", "email": "hyeonwoo@example.com"}
-    ]
-    # return templates.TemplateResponse(name="users/list.html", context={'request':request, "users" :user_list})
-    return templates.TemplateResponse(name="users/list_jinja.html", context={'request':request, "users" :user_list})
+    # print(dict(request._query_params))
+    # user_list = [
+    #     {"id": 1, "name": "김철수", "email": "cheolsu@example.com"},
+    #     {"id": 2, "name": "이영희", "email": "younghi@example.com"},
+    #     {"id": 3, "name": "박지성", "email": "jiseong@example.com"},
+    #     {"id": 4, "name": "김미나", "email": "mina@example.com"},
+    #     {"id": 5, "name": "장현우", "email": "hyeonwoo@example.com"}
+    # ]
+    # insert 작업 진행
+    # documents = collection.find({})
+    #document.next() = 오류 확인용
+# cast cursor to list
+    user_list = []
+    # for document in documents:
+    #     print("document : {}".format(document))
+    #     user_list.append(document)
+    #     pass
+    # # return templates.TemplateResponse(name="users/list.html", context={'request':request, "users" :user_list})
+    # return templates.TemplateResponse(name="users/list_jinja.html", context={'request':request, "users" :user_list})
 
 # 회원 상세정보 /users/read -> users/reads.html
 # Path parameters : /users/read/id or /users/read/uniqe_name
