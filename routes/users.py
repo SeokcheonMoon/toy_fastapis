@@ -76,7 +76,7 @@ async def list(request:Request):
     #     user_list.append(document)
     #     pass
     # # return templates.TemplateResponse(name="users/list.html", context={'request':request, "users" :user_list})
-    # return templates.TemplateResponse(name="users/list_jinja.html", context={'request':request, "users" :user_list})
+    return templates.TemplateResponse(name="users/list_jinja.html", context={'request':request, "users" :user_list})
 
 # 회원 상세정보 /users/read -> users/reads.html
 # Path parameters : /users/read/id or /users/read/uniqe_name

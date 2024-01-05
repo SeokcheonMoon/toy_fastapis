@@ -8,7 +8,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     # DATABASE_URL: Optional[str] = None
     # DB의 주소를 나타낸다.
-    DATABASE_URL = Optional[str] = None
+    DATABASE_URL : Optional[str] = None
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
         await init_beanie(database=client.get_default_database(),
