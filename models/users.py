@@ -17,7 +17,7 @@ class User(Document):
 
 
 
-class User(Document):
+class Quiz(Document):
     question: Optional[str] = None
     choice1: Optional[str] = None
     choice2: Optional[str] = None
@@ -26,4 +26,4 @@ class User(Document):
     answer: Optional[str] = None
   
     class Settings:
-        name = "users"
+        name = "quizs"
