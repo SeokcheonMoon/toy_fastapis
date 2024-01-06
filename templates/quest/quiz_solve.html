@@ -2,34 +2,42 @@
 <title>quiz_solve</title>
 
 {% block main_container %}
-{% for quiz in quizs %}
-<form action="">
-    <div class="mb-3">
-        <label for="sel1" class="form-label">{{quiz.question}}</label>
-        <div>
-            <label>{{ quiz.choice1 }}</label>
-            <input type="radio" name="question" value="choice1">
-        </div>
-        <div>
-            <label>{{ quiz.choice2 }}</label>
-            <input type="radio" name="question" value="choice2">
-        </div>
-        <div>
-            <label>{{ quiz.choice3 }}</label>
-            <input type="radio" name="question" value="choice3">
-        </div>
-        <div>
-            <label>{{ quiz.choice4 }}</label>
-            <input type="radio" name="question" value="choice4">
-        </div>
 
-    </div>
+<form>
+    <table class="table table-hover">
+        <tbody>
+            <div>
+                성함을 입력해 주세요 : <input type="text" name="player_name" id="">
+            </div>
+            <tr>
+                {% for index in range(quizs|length) %}
+            <tr>
+                <td> {{ loop.index0 + 1 }}.{{ quizs[index].question }} ({{ quizs[index].point }}점) </td>
+            </tr>
+        </tbody>
+        <tbody> 
+            <tr>
+                <td>
+                    <input type="radio" name="question{{ index }}" value="choice1" id="choice1{{ index }}">
+                    <label for="choice1{{ index }}">{{ quizs[index].choice1 }}</label>
+                </td>
+                <td>
+                    <input type="radio" name="question{{ index }}" value="choice2" id="choice2{{ index }}">
+                    <label for="choice2{{ index }}">{{ quizs[index].choice2 }}</label>
+                </td>
+                <td>
+                    <input type="radio" name="question{{ index }}" value="choice3" id="choice3{{ index }}">
+                    <label for="choice3{{ index }}">{{ quizs[index].choice3 }}</label>
+                </td>
+                <td>
+                    <input type="radio" name="question{{ index }}" value="choice4" id="choice4{{ index }}">
+                    <label for="choice4{{ index }}">{{ quizs[index].choice4 }}</label>
+                </td>
+            </tr>
+            {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    <button type="submit">제출</button>
 </form>
-{% endfor %}
 {% endblock %}
-
-
-<div>
-    <label>{{ "choice1" }}</label>
-    <input type="radio" name="question" value="choice1">
-</div>

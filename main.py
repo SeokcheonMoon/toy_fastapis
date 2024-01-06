@@ -7,6 +7,20 @@ settings = Settings()
 async def init_db():
     await settings.initialize_database()
 
+from databases.quest_connections import Settings
+settings = Settings()
+@app.on_event("startup")
+async def init_db():
+    await settings.initialize_database()
+
+# from databases.player_connections import Settings
+# settings = Settings()
+# @app.on_event("startup")
+# async def init_db():
+#     await settings.initialize_database()
+
+
+
 from routes.gadgets import router as event_router
 from routes.positionings import router as second_router
 from routes.users import router as users_router

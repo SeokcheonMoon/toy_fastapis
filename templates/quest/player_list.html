@@ -1,0 +1,29 @@
+{% extends "nav_template.html"%}
+<title>회원 리스트</title>
+{% block main_container %}
+
+<h2>회원 리스트</h2>
+<!-- 검색 항목 추가 필요 -->
+<form action="">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>응시 순번</th>
+                <th>응시자 고유 번호</th>
+                <th>응시자 명</th>
+                <th>결과 보기</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for player in players %}
+            <tr>
+                <td>{{loop.index0 + 1}}</td>
+                <td>{{player.id}}</td>
+                <td>{{player.name}}</td>
+                <td><button formaction="/quest/player_result/{{player.id}}">결과 보기</button></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</form>
+{% endblock %}

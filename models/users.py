@@ -16,7 +16,6 @@ class User(Document):
         name = "users"
 
 
-
 class Quiz(Document):
     question: Optional[str] = None
     choice1: Optional[str] = None
@@ -24,6 +23,17 @@ class Quiz(Document):
     choice3: Optional[str] = None
     choice4: Optional[str] = None
     answer: Optional[str] = None
+    point: Optional[int] = None
   
     class Settings:
-        name = "quizs"
+        name = "quiz"
+
+class Player(Document):
+    question_id : Optional[str] = None
+    player_name : Optional[str] = None
+    answer: Optional[str] = None
+    point: Optional[int] = None
+    player_answer: Optional[str] = None
+
+    class Settings:
+        name = "player"
