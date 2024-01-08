@@ -10,7 +10,6 @@
             <div>
                 성함을 입력해 주세요 : <input type="text" name="player_name" id="">
             </div>
-            <button type="submit" formmethod="post">접수하기</button>
             <tr>
                 {% for index in range(quizs|length) %}
             <tr>
@@ -40,6 +39,6 @@
             </tr>
         </tbody>
     </table>
-    <button type="submit">제출</button>
+    <button type="submit" formaction="/quest/quiz_solve"  formmethod="post">제출하기</button>
 </form>
 {% endblock %}

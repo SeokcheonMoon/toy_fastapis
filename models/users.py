@@ -28,20 +28,10 @@ class Quiz(Document):
     class Settings:
         name = "quiz"
 
-class User_name(Document):
-    player_name : Optional[str] = None
+# class User_name(Document):
+#     player_name : Optional[str] = None
 
-    class Settings:
-        name = "user_name"
+#     class Settings:
+#         name = "user_name"
 
 
-class Player(Document):
-    _id : Optional[str] = None
-    _id : Optional[str] = None
-    player_name : Optional[str] = None
-    answer: Optional[str] = None
-    point: Optional[int] = None
-    player_answer: Optional[str] = None
-
-    class Settings:
-        name = "player"

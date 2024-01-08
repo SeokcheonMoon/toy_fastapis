@@ -42,5 +42,5 @@ class user_name_Database :
 
     # 저장
     async def save(self, document) -> None:
-        await document.create()
-        return None
+        id = await document.create()
+        return id
