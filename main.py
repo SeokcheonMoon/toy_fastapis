@@ -13,11 +13,19 @@ settings = Settings()
 async def init_db():
     await settings.initialize_database()
 
-# from databases.player_connections import Settings
-# settings = Settings()
-# @app.on_event("startup")
-# async def init_db():
-#     await settings.initialize_database()
+
+from databases.user_name_connections import Settings
+settings = Settings()
+@app.on_event("startup")
+async def init_db():
+    await settings.initialize_database()
+
+
+from databases.player_connections import Settings
+settings = Settings()
+@app.on_event("startup")
+async def init_db():
+    await settings.initialize_database()
 
 
 

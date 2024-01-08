@@ -1,6 +1,6 @@
 from typing import Any, List, Optional
 from beanie import init_beanie, PydanticObjectId
-from models.users import Quiz
+from models.users import User_name
 from motor.motor_asyncio import AsyncIOMotorClient
 # from pydantic import BaseModel
 # 변경 후 코드
@@ -10,12 +10,12 @@ class Settings(BaseSettings):
     async def initialize_database(self):
         client = AsyncIOMotorClient(self.DATABASE_URL)
         await init_beanie(database=client.get_default_database(),
-                          document_models=[Quiz])
+                          document_models=[User_name])
     
     class Config:
         env_file = ".env"
 
-class Quest_Database :
+class user_name_Database :
     #model은 collection
     def __init__(self, model) -> None:
         self.model = model
