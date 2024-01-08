@@ -39,6 +39,7 @@ class user_name_Database :
             return documents
         return False    
     
+
     # 저장
     async def save(self, document) -> None:
         await document.create()

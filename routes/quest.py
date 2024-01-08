@@ -17,6 +17,9 @@ collection_user_name = user_name_Database(User_name)
 async def user_name_input(request:Request):
     form_data = await request.form()
     user_form_data = dict(form_data)
+    user = User_name(**user_form_data)
+    await collection_user_name.save(user)
+    user_form_data = await collection_user_name.get_all()
     return templates.TemplateResponse(name="quest/quiz_solve.html", context={'request':request, "user_name" :user_form_data})
 
 from databases.quest_connections import Quest_Database
