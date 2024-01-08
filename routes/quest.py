@@ -8,6 +8,17 @@ router = APIRouter()
 
 templates = Jinja2Templates(directory="templates/")
 
+from databases.user_name_connections import user_name_Database
+from models.users import User_name
+
+collection_user_name = user_name_Database(User_name)
+
+@router.post("/quiz_solve") # 펑션 호출 방식
+async def user_name_input(request:Request):
+    form_data = await request.form()
+    user_form_data = dict(form_data)
+    return templates.TemplateResponse(name="quest/quiz_solve.html", context={'request':request, "user_name" :user_form_data})
+
 from databases.quest_connections import Quest_Database
 from models.users import Quiz
 
