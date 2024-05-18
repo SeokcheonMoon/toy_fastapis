@@ -21,18 +21,35 @@ async def quiz_solve(request:Request):
 
 
 
-from models.user_name import User_name
+from models.users import User
 
-collection_user_name = Quest_Database(User_name)
+collection_user_name = Quest_Database(User)
 
-@router.post("/quiz_solve") # 펑션 호출 방식
+@router.post("/player_list") # 펑션 호출 방식
 async def user_name_input(request:Request):
     form_data = await request.form()
     user_form_data = dict(form_data)
-    user = User_name(**user_form_data)
+    user = User(**user_form_data)
     await collection_user_name.save(user)
-    user_form_data = await collection_user_name.get()
-    return templates.TemplateResponse(name="quest/quiz_solve.html", context={'request':request, "user_name" :user_form_data})
+    user_form_data = await collection_user_name.get_all()
+    player_list = {
+        'question_id': user_form_data.id,
+        'player_name': form_data.get('player_name'),
+        'correct_answer': user_form_data.answer if user_form_data else None,
+        'point': int(user_form_data.point),
+        'player_answer': form_data.get('player_answer')
+    }
+    player = User(**player_list)
+    await player.insert()
+    #리스트 정보
+    player_list = await player.find_all().to_list()
+    return templates.TemplateResponse(name="quest/player_list.html", context={'request':request, "players" : player_list})
+
+
+
+
+
+    return templates.TemplateResponse(name="quest/player_list.html", context={'request':request, "user_name" :user_form_data})
 
 
 
@@ -73,8 +90,8 @@ async def user_name_input(request:Request):
 #     return templates.TemplateResponse(name="quest/player_list.html", context={'request':request, "players" : player_list})
 
 
-@router.get("/player_list") # 펑션 호출 방식
-async def player_list(request:Request):
-    player_list = await collection_player.get_all()
-    return templates.TemplateResponse(name="quest/player_list.html", context={'request':request, "players" :player_list})
+# @router.get("/player_list") # 펑션 호출 방식
+# async def player_list(request:Request):
+#     player_list = await collection_player.get_all()
+#     return templates.TemplateResponse(name="quest/player_list.html", context={'request':request, "players" :player_list})
 
